@@ -1,7 +1,10 @@
-So You Want To Be An Entrepreneur
+[So You Want To Be An Entrepreneur](http://app.pluralsight.com/courses/want-to-be-entrepreneur)
 =================================
-Entrepreneurs who often dream of billions usually only reach a million or two (not that bad...)
+By [Dan Appleman](http://app.pluralsight.com/author/dan-appleman)
+
 # How to Make Money
+Entrepreneurs who often dream of billions usually only reach a million or two (not that bad...)
+
 * Sell Your Time
     * Doesn't scale well
 * Sell Something You Own
