@@ -1,5 +1,7 @@
-JavaScript Best Practices
+[JavaScript Best Practices](http://app.pluralsight.com/courses/javascript-best-practices)
 =========================
+By [Jonathan Mills](http://app.pluralsight.com/author/jonathan-mills)
+
 **Consistency is key**
 
 # Syntax
