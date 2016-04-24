@@ -171,3 +171,118 @@ on the left of the call (no `this` bound), so it will fail.
 
 The best practice is to do `var _this = this` and use `_this` in our code everwhere instead of `this`,
 whenever we are dealing with the `this` keyword.
+
+# Async Patterns
+
+## Callbacks: stop using anonymous functions
+* To avoid callbacks hell (nested callbacks within nested callbacks within .... you get the point!), declare named functions instead.
+* If you need access to a variable outside of your new function, use a closure instead of passing it as an argument
+* Error Handling: always use `return` when calling `done()` to make sure you are exiting and make it explicit that you're leaving the function.
+```
+if (err) {
+  return done(err, null);
+}
+```
+
+## Promises
+Promises can replace callbacks. (<ES7: use [PromiseJS](https://www.promisejs.org/) or Node) (ES7: use `async`, `await`)
+
+For example:
+```
+function asyncMethod(m, cb) {
+  setTimeout(() => {
+    console.log(m);
+    cb();
+  }, 500);
+}
+
+asyncMethod('Open DB Connection', () => {
+  asyncMethod('Find User', () => {
+    asyncMethod('Validate User', () => {
+      asyncMethod('Do Stuff', () => {});
+    });
+  });
+});
+```
+could be the following:
+
+PromiseJS:
+```
+function asyncMethod(m) {
+  return new Promise((fulfill, reject) => {
+    setTimeout(() => {
+      console.log(m);
+      fulfill();
+    }, 500);
+  });
+}
+
+function findUser() {
+  return asyncMethod('Find User');
+}
+
+function validateUser() {
+  return asyncMethod('Validate User');
+}
+
+function doStuff() {
+  return asyncMethod('Do Stuff');
+}
+
+asyncMethod('Open DB Connection')
+  .then(findUser, new Error())
+  .then(validateUser)
+  .then(doStuff);
+  .then(() => {});
+```
+
+## Async - Await (ES7)
+```
+function asyncMethod(m) {
+  return new Promise((fulfill, reject) => {
+    setTimeout(() => {
+      console.log(m);
+      fulfill();
+    }, 500);
+  });
+}
+
+function findUser() {
+  return asyncMethod('Find User');
+}
+
+function validateUser() {
+  return asyncMethod('Validate User');
+}
+
+function doStuff() {
+  return asyncMethod('Do Stuff');
+}
+
+async function main() {
+  await asyncMethod('Open DB Connection');
+  await findUser();
+  await validateUser();
+  await doStuff();
+}
+
+main();
+```
+
+```
+function asyncMethod(m, num) {
+  return new Promise((fulfill, reject) => {
+    setTimeout(() => {
+      console.log(`${m} ${num}`);
+      fulfill(num + 1);
+    }, 500);
+  });
+}
+
+async function main() {
+  let one = await asyncMethod('Open DB Connection', 0);
+  let two = await asyncMethod('Find User', one);
+  let three = await asyncMethod('Validate User', two);
+  let four = await asyncMethod('Do Stuff', three);
+}
+```
