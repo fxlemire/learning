@@ -286,3 +286,38 @@ async function main() {
   let four = await asyncMethod('Do Stuff', three);
 }
 ```
+
+# Production Code
+
+## NPM Settings
+* `npm init`
+* `npm config set save-exact=true`
+  * saves the exact version of the installed package (will not prepend with `^`)
+* `"engines": {"node": "<4.2.1"}`
+
+## Environmental Variables
+### [Foreman](https://github.com/strongloop/node-foreman)
+* `npm install -g foreman`
+* `nf start` instead of `node start`
+* create a .env file. Foreman will stick it into the `process.env` environment.
+```
+{
+    "port": 9000,
+    "connection": {
+      "sql": "",
+      "mongo": ""
+    }
+}
+```
+
+## Cross Platform Concerns
+* Name all files with lowercase and replace spaces by dashes.
+  * If the case is not respected in a path, it works fine on Windows and Mac, but will blow up on Linux. This can lead to unexpected errors.
+
+## Simplify Your World
+### KISS Principal
+Keep it simple... (smarty?)
+
+Don't confuse 'Doing things the best way' with 'Using tools'.
+
+Don't use things because they're cool. Use them because they're useful to you.
