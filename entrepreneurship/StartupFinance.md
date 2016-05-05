@@ -1,4 +1,4 @@
-Startup Finance Meetup (April 28th)
+Startup Finance Meetup (April 28th, 2016)
 ===============
 # Announcements
 * Fundica Roadshow, may 13th
