@@ -53,4 +53,15 @@ drush pm-uninstall [packages] -y
 
 ## Drush Commands for Site Administrators
 
+* `drush status`: Site status report
+* `(pm-updatecode) drush upc --notes`
+* `(pm-updatecode) drush upc --security-only`
+* `drush updatedb`
+    * OR `(pm-update) drush up` which includes both `upc` and `updatedb`
+* `drush watchdog-list` for recent entry logs (actions, cron, etc.)
+* `drush cc all` to clear cache
+* `drush cron` to run cron jobs
+* `drush search-status` to get status of indexes
+* `drush search-index`: index site for search
 
+## Helpful Drush Commands for Developers
