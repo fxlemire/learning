@@ -83,3 +83,31 @@ drush pm-uninstall [packages] -y
 * `drush sql-conf` to get the configuration details of the sql database
 * `(sql-query) drush sqlq "SELECT * FROM node WHERE nid=1"`
 * `drush sql-dump --gzip --result-file` to make a backup of the database inside `~/drush-backups/project-name/YYYYMMDDHHSS/`
+
+## Drush Commands from Contributed Modules
+
+### Backup and Migrate
+
+* `drush | grep bam`
+
+### Features
+
+* `drush | grep features`
+* `(features-list) drush fl` to list all the available features of the site
+* `(features-diff) drush fd my_feature` to get the diff between a default and overridden state of a feature
+* `(features-update) drush fu my_feature` to save the diff of a feature to the DB
+* `(features-revert) drush fr my_feature` to discard any diff of a feature
+
+### Migrate
+
+* `drush | grep migrate`
+
+### Apache Solr
+
+* `drush | grep solr`
+
+### Drush Make
+
+See videola [starter make file](https://github.com/Videola/videola/blob/master/videola_starter.make) and [make file](https://github.com/Videola/videola/blob/master/videola.make) as reference.
+
+* `drush make my_make_file my_project_folder`
