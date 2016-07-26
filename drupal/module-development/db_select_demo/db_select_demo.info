@@ -1,0 +1,3 @@
+name = DB Select Demo
+description = Demo on how to query the database with db_select
+core = 7.x

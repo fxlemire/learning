@@ -1,0 +1,3 @@
+name = Menu MAngler
+description = Demonstrate the use of hook_page_alter()
+core = 7.x

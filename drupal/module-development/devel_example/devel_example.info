@@ -1,0 +1,4 @@
+name = Devel Example
+description = Just a simple devel example module
+package = Pluralsight
+core = 7.x

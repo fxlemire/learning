@@ -4,6 +4,8 @@ Learning
 
 ## [Drush](drupal/Drush.md)
 
+## [Drupal Module Development](drupal/moduleDevelopment/)
+
 # [Entrepreneurship](entrepreneurship)
 
 ## [Les principales aides financières gouvernementales aux entreprises émergentes (5 mai 2016)](entrepreneurship/PrincipalesAidesFinancieresGouvernementales.md)

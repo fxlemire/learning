@@ -1,0 +1,3 @@
+name = Form Fun
+description = Demonstrate the use of Drupal Form API
+core = 7.x

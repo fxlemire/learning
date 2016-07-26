@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function db_methods_schema() {
+  $schema = array();
+
+  $schema['db_methods'] = array(
+    'description' => 'Information about node views.',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The node\'s {node}.nid.'
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The user\'s {uid}.uid.',
+      ),
+      'view_count' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Simple node view counter per user.'
+      ),
+      'last_viewed' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The last views date (timestamp).'
+      )
+    ),
+    'primary key' => array('nid', 'uid')
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function db_methods_update_7000(&$sandbox) {
+  drupal_install_schema('db_methods');
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Add the "Last viewed date" field.
+ */
+function db_methods_update_7001(&$sandbox) {
+  $field = array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'default' => 0,
+    'description' => 'The last views date (timestamp).'
+  );
+
+  db_add_field('db_methods', 'last_viewed', $field);
+
+  return t('The "Last Viewed Date" field has been added.');
+}

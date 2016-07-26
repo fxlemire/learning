@@ -1,0 +1,13 @@
+<?php
+/**
+ * Implements hook_init().
+ */
+function devel_example_init() {
+  global $user;
+  // print_r($user); // prints wherever it got called
+  // debug($user); // prints in a debug window, nicely formatted
+  // dsm($user); // prints following the krumo rules
+  // kpr($user); // prints following the krumo rules, but not in the debug window
+  dsm($user, 'variable 1'); // prints following the krumo rules
+  dsm('hello world', 'my string');
+}

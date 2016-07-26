@@ -1,0 +1,126 @@
+<?php
+
+// /**
+//  * Implements hook_node_view().
+//  */
+// function db_methods_node_view($node, $view_mode, $langcode) {
+//   // only when looking at the full version, NOT the teaser
+//   if ($view_mode == 'full') {
+//     // Everytime a node is viewed, increment the node_views count
+//     // in the user's session by one and include the result in the node content
+
+//     // make sure there is a record in the session
+//     if (empty($_SESSION['node_views'][$node->nid])) {
+//       $_SESSION['node_views'][$node->nid] = 0;
+//     }
+
+//     // dsm('Before: ' . $_SESSION['node_views'][$node->nid]);
+
+//     // add another to the session
+//     $_SESSION['node_views'][$node->nid]++;
+
+//     // dsm('AFTER: ' . $_SESSION['node_views'][$node->nid]);
+
+//     // Set up an array of placeholders to pass to t().
+//     $t_args = array(
+//       '%num' => $_SESSION['node_views'][$node->nid],
+//     );
+
+//    $node->content['node_views'] = array(
+//      '#markup' => t('You have viewed this page %num times.', $t_args),
+//      '#weight' => 10
+//    );
+//   }
+// }
+
+/**
+ * Implements hook_node_view().
+ */
+function db_methods_node_view($node, $view_mode, $langcode) {
+  // only when looking at the full version, NOT the teaser
+  if ($view_mode == 'full') {
+    global $user;
+
+    // Everytime a node is viewed, increment the node_views count
+    // in the db_methods table by one and include the result in the node content
+
+    // Get record
+    $record = db_methods_get_record($node->nid, $user->uid);
+
+    // krumo($record);
+
+    // If no record, create one that we can insert later
+    if ($record == FALSE) {
+      $record = new StdClass();
+      $record->nid = $node->nid;
+      $record->uid = $user->uid;
+      $record->view_count = 0;
+      $record->last_viewed = time();
+    }
+
+    // krumo($record);
+
+    // Increment view_count by 1
+    ++$record->view_count;
+
+    // Update last_viewed
+    $record->last_viewed = time();
+
+    // Set the record
+    db_methods_set_record($record);
+
+    // Set up an array of placeholders to pass to t().
+    $t_args = array(
+      '%num' => $record->view_count,
+      '%date' => date('M j, Y', $record->last_viewed)
+    );
+
+    $node->content['node_views'] = array(
+     '#markup' => t('You have viewed this page %num times. It was last viewed by you on %date.', $t_args),
+     '#weight' => 10
+    );
+  }
+}
+
+/**
+ * Get the record.
+ *
+ * @param int $nid
+ *  The node id.
+ * @param int $uid
+ *  The user id.
+ * @return mised
+ *  The stdClass record, or FALSE if no record exists.
+ */
+function db_methods_get_record($nid, $uid) {
+  // SELECT view_count FROM db_methods WHERE nid = $nid AND uid = $uid;
+  $query = db_select('db_methods', 'd')
+    ->fields('d', array('nid', 'uid', 'view_count', 'last_viewed'))
+    ->condition('nid', $nid)
+    ->condition('uid', $uid);
+
+  $record = $query->execute()->fetch();
+
+  return $record;
+}
+
+/**
+ * Save a record
+ *
+ * @param stdClass $record
+ *  The record to save.
+ */
+function db_methods_set_record($record) {
+  //sanity check
+  if (!is_object($record)) {
+    return watchdog('db_methods', 'We could not update information about node views.', array(), WATCHDOG_ERROR);
+  }
+
+  // INSERT/UPDATE into db_methods ('nid', 'uid', 'node_views') VALUES ('nid', 'uid', 'node_views');
+  $query = db_merge('db_methods')
+    ->key(array('nid' => $record->nid))
+    ->key(array('uid' => $record->uid))
+    ->fields((array) $record);
+
+  $query->execute();
+}
