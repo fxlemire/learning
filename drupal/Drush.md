@@ -8,7 +8,12 @@ By [Addison Berry](http://app.pluralsight.com/author/addison-berry) et als.
 
 ```
 curl https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-sudo composer global require drush/drush
+composer global require drush/drush
+vim ~/.bashrc
+//PATH=~/.config/composer/vendor/bin:$PATH
+//export PATH
+source ~/.bashrc
+drush --version
 sudo chown -R $USER ~/.drush
 ```
 
