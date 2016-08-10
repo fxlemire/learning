@@ -18,6 +18,10 @@ Learning
 
 ## [JavaScript Best Practices](javascript/JavaScriptBestPractices.md)
 
+# [PHP](php)
+
+## [Debugging a PHP Website Hosted on a VM With VS Code and XDebug On Windows](php/XDebug.md)
+
 # [Redmine](redmine)
 
 ## [Host Redmine With Docker on Windows](redmine/docker.md)
