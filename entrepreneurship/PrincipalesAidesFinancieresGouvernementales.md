@@ -1,13 +1,13 @@
-Les principales aides financières gouvernementales aux entreprises émergentes (5 mai 2016)
-==========================================================================================
+Les principales aides financières gouvernementales aux entreprises émergentes (5 mai 2016, 18 mai 2017)
+=======================================================================================================
 CEIM | Facebook: [CEIM Express](https://www.facebook.com/CEIM-Express-614322228590182/) | Twitter: [@CEIM_Q](https://twitter.com/CEIM_Qc)
 
 ## PME Montréal Centre-ville
 * Daniel Larouche, Directeur principal - Services conseils & financement
 * PME Montreal centre-ville
 * 514-879-0555 #230
-* dlarouche@pmemtl.ca
-* www.pmemtl.ca
+* dlarouche@pmemtl.com
+* www.pmemtl.com/centre
 
 Secteurs priorisés:
 * nouvelle-économie (logiciels, jeux vidéo, science de la vie, web, etc.)
@@ -15,8 +15,9 @@ Secteurs priorisés:
 * technologies vertes *green tech* (éolien, hydroliennes, énergie solaire)
 
 Programmes:
-* fonds local d'investissement
-  * montant: 25K à 150K
+* fonds PME Montréal
+  * prêt-direct ou garantie 100% prêt commercial d'une institution financière
+  * montant: 25K à 300K
   * viabilité économique (ventes + couverture service de la dette + EBITDA positif)
   * retombées économiques (création d'emploi)
   * mise de fonds minimale de 10% au projet
@@ -25,6 +26,7 @@ Programmes:
 * jeunes entreprises
   * subvention non remboursable entre 5 - 15K
   * entreprise de moins de 3 ans
+  * mise de fonds 10% minimum dans le projet
   * doit être accompagnée d'un financement (prêt)
   * connaissance + expérience pertinente du domaine
   * doit travailler à temps plein
@@ -34,7 +36,12 @@ Programmes:
   * viabilité économique de l'entreprise financée
   * entreprise à l'étape de la croissance
   * amortissement 60 mois
-  * intérêt 10%
+  * intérêt 8-10%
+* Créavenir Montréal
+  * 10K $ (3K subvention, 7K prêt)
+  * amortissement 60 mois
+  * intérêt 3%
+  * entrepreneurs de 18 à 35 ans, entreprise en pré-commercialisation
 
 ## [Emploi Québec](www.emploiquebec.gouv.qc.ca)
 514-873-7032 #266
@@ -62,6 +69,8 @@ Services aux entreprises:
 [montezdeniveau.ca](montezdeniveau.ca) (2$/h)
 
 ## L'Agence au cœur de la croissance et de l'économie des régions du Québec
+
+* PDEQ (Programme de développement économique du Québec)
 * www.dec-ced.gc.ca
 * Stephan Canty
 * Bureau d'affaires Grand Montréal
@@ -82,8 +91,9 @@ Aide financière pour les PME
 Critères d'analyse:
 * viabilité de l'entreprise
 * capacité de gestion technique et financière
-* résultats attendus du projet dont retombées économiques
-* avance technologique
+* résultats attendus du projet dont retombées économiques incluant potentiel de croissance
+* avance technologique, barrières à l'entrée, incidences sectorielles
+* profil (innovation, partenaires, etc.)
 * montage financier
 * démonstration du besoin d'aide
 * niveau de risque couru
@@ -94,14 +104,17 @@ CRSNG NSERC
 Il faut collaborer avec un chercheur universitaire / collège.
 
 ## Centre national de recherche du Canada
-* PARI-CNRC: Programme d'aide à la recherche industrielle
+* PARI-CNRC: Programme d'aide à la recherche industrielle (R&D)
 * cnrc.gc.ca/pari
 * 877-994-4727
-
+* Violaine Lacroix, Conseillère en technologie industrielle
+* 514-956-2525 #3326
+* www.cnrc-nrc.gc.ca
 
 * PARI
 * Jeunesse
 * Jeunesse-Vert
+* Concierge Innovation
 * CanExport
 
 Critères:
@@ -113,7 +126,6 @@ Critères:
 * Directeur, Développement des affaires
 * pdeslierres@mitacs.ca
 * 514-571-6556
-
 
 * Accélération
   * 7 500$ pour 4 mois (l'entreprise doit payer 7 500$ également)
