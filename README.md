@@ -19,6 +19,8 @@ Learning
 
 ## [Startup Finance Meetup (April 28th, 2016)](entrepreneurship/StartupFinance.md)
 
+## [TSXEssor (October 14th, 2016)](entrepreneurship/TSXEssor.md)
+
 # [GitHub](github)
 
 ## [GitHub Pages](github/GitHubPages.md)
